@@ -28,7 +28,7 @@ html {
   flex-flow: column;
 }
 body {
-  background-color: lightblue;
-  color: darkblue;
-  font-size: 18px;
-}
+    .dark-theme & {
+        background-color: black;
+       }
+    }
