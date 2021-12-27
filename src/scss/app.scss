@@ -28,7 +28,78 @@ html {
   flex-flow: column;
 }
 body {
-  background-color: lightblue;
-  color: darkblue;
-  font-size: 18px;
+    .dark-theme & {
+        background-color: black;
+       }
+    }
+
+    @import'./colors';
+@mixin btn-variant ($color1, $color2,
+            $color-hover: color-yiq($color1)) {
+    background-color: $color1;
+    border-color: $color1;
+    color:$color2;
+}
+  
+/* Generating @mixin based on 'btn-outline-variant' */
+@mixin btn-outline-variant($color1, $color2) {
+    background-color: $color2;
+    border-color: $color1;
+    color:$color1;
+}
+  
+/* Including @mixin based on 'btn-variant' and
+    hover properties within a custom class*/
+.btn-hotpink {
+    @include btn-variant($hotpink, white, $hotpink);
+    &:hover {
+        background-color: $hotpink !important;
+        color: $white !important;
+    }
+}
+  
+.btn-lightgreen {
+    @include btn-variant($lightgreen, white, $lightgreen);
+   
+    &:hover {
+        background-color: $lightgreen !important;
+        color: $white !important;
+    }
+}
+  
+.btn-lightsalmon {
+    @include btn-variant($lightsalmon, white, $lightsalmon);
+   
+    &:hover {
+        background-color: $lightsalmon !important;
+        color: $white !important;
+    }
+}
+   
+/* Including @mixin based on 'btn-outline-variant'
+  and hover properties within a custom class */
+.btn-outline-hotpink {
+    @include btn-outline-variant($hotpink, white);
+    &:hover {
+        background-color: $hotpink !important;
+        color: $white !important;
+    }
+}
+  
+.btn-outline-lightgreen {
+    @include btn-outline-variant($lightgreen, white);
+   
+    &:hover {
+        background-color: $lightgreen !important;
+        color: $white !important;
+    }
+}
+  
+.btn-outline-lightsalmon {
+    @include btn-outline-variant($lightsalmon, white);
+   
+    &:hover {
+        background-color: $lightsalmon !important;
+        color: $white !important;
+    }
 }
